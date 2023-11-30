@@ -30,7 +30,7 @@ import * as pyodideModule from 'pyodide'
 import { useEffect, useRef, useState } from 'react'
 import { z } from 'zod'
 
-import engine from '../../rules-engine/src/rules_engine/engine.py'
+import engine from './utils/engine.py'
 
 import { Confetti } from './components/confetti.tsx'
 import { GeneralErrorBoundary } from './components/error-boundary.tsx'
