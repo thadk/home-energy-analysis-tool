@@ -179,10 +179,8 @@ jobs:
       # move Dockerfile to root
       - name: 🚚 Move Dockerfile
         run: |
-          ls
-          pwd
-          mv ${{ env.working-directory }}/other/Dockerfile ./Dockerfile
-          mv ${{ env.working-directory }}/other/.dockerignore ./.dockerignore
+          mv ./other/Dockerfile ./Dockerfile
+          mv ./other/.dockerignore ./.dockerignore
 
       - name: 🎈 Setup Fly
         uses: superfly/flyctl-actions/setup-flyctl@v1.4         
