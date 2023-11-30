@@ -179,6 +179,8 @@ jobs:
       # move Dockerfile to root
       - name: 🚚 Move Dockerfile
         run: |
+          ls
+          pwd
           mv ${{ env.working-directory }}/other/Dockerfile ./Dockerfile
           mv ${{ env.working-directory }}/other/.dockerignore ./.dockerignore
 
@@ -194,7 +196,7 @@ jobs:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
       - name: 🚀 Deploy Production
-        if: ${{ github.ref == 'test-rules-whl-deployment' }}
+        if: ${{ github.ref == 'refs/heads/test-rules-whl-deployment' }}
         run:
           flyctl deploy ${{ env.working-directory }} --remote-only --build-arg COMMIT_SHA=${{ github.sha }}
         env:
