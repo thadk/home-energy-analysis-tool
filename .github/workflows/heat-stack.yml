@@ -182,6 +182,12 @@ jobs:
           mv ./other/Dockerfile ./Dockerfile
           mv ./other/.dockerignore ./.dockerignore
 
+      - name: Pull Built Wheel Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: python-rules-engine-wheel  # this will include both gzip and whl, consider removing gzip later.
+          path: public/pyodide-env/ 
+
       - name: 🎈 Setup Fly
         uses: superfly/flyctl-actions/setup-flyctl@v1.4         
 

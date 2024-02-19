@@ -10,6 +10,13 @@ test('pyodide loads', async () => {
 		// public folder:
 		return await pyodideModule.loadPyodide({
 			indexURL: 'public/pyodide-env/',
+			packages: [
+				'numpy',
+				'pydantic',
+				'pydantic_core',
+				'annotated_types',
+				'rules_engine',
+			] /* references pyodide-lock.json for version number */,
 		})
 	}
 	const runPythonScript = async () => {
