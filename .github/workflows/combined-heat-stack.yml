@@ -182,7 +182,8 @@ jobs:
         run: npm run build:icons
       - name: ⚡ Run vitest
         working-directory: ${{ env.heat-stack-working-directory }}
-        run: npm run test app/utils/pyodide.test.ts --  # --coverage
+        run: npm run test app/utils/pyodide.test.ts --  
+        # --coverage
 
 # playwright tests work great but slight jank/inconsistency passing, and not used yet, so disabling for now
 #   playwright-heat-stack:
