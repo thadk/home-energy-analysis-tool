@@ -25,7 +25,6 @@ permissions:
   contents: read
 
 jobs:
-  # Rules Engine Jobs
   lint-rules-engine:
     name: Rules Engine - Lint
     runs-on: ubuntu-latest
